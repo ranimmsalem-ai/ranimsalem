@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranim Salem, Creative Portfolio</title>
+<meta name="ext-resource-dependency" content="assets/posts/en-01.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-02.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-03.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-04.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-05.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-06.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-07.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-08.jpg">
+<meta name="ext-resource-dependency" content="assets/posts/en-09.jpg">
+<meta name="ext-resource-dependency" content="assets/zou/zou-01.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-02.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-03.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-04.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-05.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-06.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-07.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-08.png">
+<meta name="ext-resource-dependency" content="assets/zou/zou-09.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-1.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-2.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-3.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-4.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-5.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-6.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-7.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-8.png">
+<meta name="ext-resource-dependency" content="assets/reels/ahoe-9.png">
+<meta name="ext-resource-dependency" content="assets/reels/sue-1.png">
+<meta name="ext-resource-dependency" content="assets/reels/sue-2.png">
+<meta name="ext-resource-dependency" content="assets/reels/sue-3.png">
+<meta name="ext-resource-dependency" content="assets/reels/sue-4.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #4B2359; color: #fff; font-family: Poppins, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #F0CE93; }
+  ::selection { background: #F0CE93; color: #2E1338; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  /* ---------- MOBILE (≤640px) ----------
+     The page is inline-styled, so these overrides use !important.
+     They only change layout/scale, never colour or type family. */
+  @media (max-width: 640px) {
+    /* tighten the gap between the hero CTAs and the portrait */
+    #home { row-gap: 10px !important; }
+
+    /* 1. no horizontal scroll, ever */
+    html, body { max-width: 100% !important; overflow-x: hidden !important; }
+    img, video { max-width: 100% !important; height: auto !important; }
+
+    /* 2. every multi-column grid collapses to one column */
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    /* except the media/post grids, which stay 2-up so they still read as a grid */
+    #work [style*="minmax(150px"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    #work [style*="minmax(148px"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    #work [style*="minmax(120px"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+
+    /* 3. hero: photo under the text, no side-by-side squeeze */
+    #home { padding-top: 104px !important; }
+    #home h1 { font-size: 34px !important; line-height: 1.06 !important; }
+
+    /* 4. comfortable section rhythm */
+    section { padding-left: 18px !important; padding-right: 18px !important; }
+    #work, #services, #contact, #about { padding-top: 56px !important; padding-bottom: 56px !important; }
+
+    /* 5. readable body copy, no text below 15px */
+    p, li, span, a { text-wrap: pretty; }
+    section p { font-size: 15.5px !important; line-height: 1.7 !important; }
+
+    /* 6. thumb-friendly targets: 44px minimum on every link that looks like a button */
+    section a[style*="border-radius:999px"], section a[style*="border-radius: 999px"] {
+      min-height: 44px !important; display: flex !important;
+      align-items: center !important; justify-content: center !important;
+      padding: 13px 22px !important; width: 100% !important; box-sizing: border-box !important;
+    }
+    /* contact rows keep label-left / arrow-right */
+    #contact a[style*="border-radius:14px"], #contact a[style*="border-radius: 14px"] {
+      min-height: 44px !important; display: flex !important; align-items: center !important;
+      justify-content: space-between !important; box-sizing: border-box !important;
+    }
+    nav a[style*="border-radius:999px"] {
+      width: auto !important; min-height: 40px !important; display: inline-flex !important;
+      align-items: center !important; justify-content: center !important; padding: 10px 11px !important;
+    }
+
+    /* 7. nav stays one scrollable row and never covers content */
+    nav { padding: 8px 14px !important; }
+
+    /* 8. full-bleed dark panels keep their edge-to-edge look */
+    [style*="calc(-1 * clamp(20px,5vw,64px))"] { margin-left: -18px !important; margin-right: -18px !important; padding-left: 18px !important; padding-right: 18px !important; }
+  }
+
+  /* ---------- SMALL PHONES (≤390px: iPhone 12/13/14/15 base) ---------- */
+  @media (max-width: 390px) {
+    #home h1 { font-size: 30px !important; }
+    #work > div h2 { font-size: 46px !important; }
+    #work [style*="minmax(150px"], #work [style*="minmax(148px"] { gap: 8px !important; }
+  }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="background:#4B2359;overflow-x:hidden">
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;align-items:center;gap:14px clamp(14px,4vw,32px);flex-wrap:wrap;padding:10px clamp(12px,4vw,40px);backdrop-filter:blur(14px);background:rgba(75,35,89,0.72);borderBottom:1px solid rgba(255,255,255,0.12)">
+    <a href="#home" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;opacity:0.9;flex:0 0 auto">Ranim Salem Portfolio</a>
+    <div style="display:flex;gap:2px;font-size:13px;letter-spacing:0.04em;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch">
+      <a href="#work" style="padding:10px 11px;border-radius:999px;flex:0 0 auto" style-hover="background:rgba(255,255,255,0.12)">Work</a>
+      <a href="#about" style="padding:10px 11px;border-radius:999px;flex:0 0 auto" style-hover="background:rgba(255,255,255,0.12)">About</a>
+      <a href="#services" style="padding:10px 11px;border-radius:999px;flex:0 0 auto" style-hover="background:rgba(255,255,255,0.12)">Services</a>
+      <a href="#contact" style="padding:10px 11px;border-radius:999px;flex:0 0 auto" style-hover="background:rgba(255,255,255,0.12)">Contact</a>
+    </div>
+  </nav>
+
+  <section id="home" data-screen-label="Home" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center;gap:clamp(32px,5vw,48px);padding:clamp(112px,18vw,150px) clamp(20px,5vw,64px) 0;position:relative">
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 15% 10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%);pointer-events:none"></div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center">
+      <p style="margin:0 0 clamp(24px,5vw,40px);font-size:clamp(16px,4.2vw,19px);line-height:1.6;font-weight:300;color:rgba(255,255,255,0.82);max-width:34ch;margin-inline:auto;text-wrap:pretty">I'm a creative driven by purpose. Combining <strong style="font-weight:600;color:#fff">marketing</strong>, <strong style="font-weight:600;color:#fff">visuals</strong>, and <strong style="font-weight:600;color:#fff">storytelling</strong> to bring ideas to life.</p>
+      <h1 style="margin: 0; font-size: clamp(30px,4.4vw,84px); line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; max-width: min(100%, 760px); width: 100%; text-align: center">Hello,<br>It's Ranim Salem</h1>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:clamp(28px,6vw,44px)">
+        <a href="#work" style="padding:15px 24px;border-radius:999px;background:#F0CE93;color:#2E1338;font-size:14px;font-weight:600" style-hover="background:#fff">Portfolio</a>
+        <a href="#contact" style="padding:14px 26px;border-radius:999px;border:1px solid rgba(255,255,255,0.35);font-size:14px;font-weight:500" style-hover="border-color:#fff;background:rgba(255,255,255,0.08)">Let&rsquo;s work together</a>
+      </div>
+    </div>
+    <div style="position:relative;display:flex;justify-content:center;align-items:flex-end;align-self:stretch">
+      <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(330px,72%);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,0.09)"></div><img src="assets/ranim.png" alt="Ranim Salem" style="position: relative; filter: drop-shadow(0 30px 60px rgba(40,16,50,0.45)); width: min(471px, 88%); height: auto; max-width: 100%; object-fit: contain; display: block; margin-bottom: 0">
+      
+    </div>
+  </section><div style="overflow:hidden;border-top:1px solid rgba(255,255,255,0.14);border-bottom:1px solid rgba(255,255,255,0.14);padding:16px 0;background:rgba(0,0,0,0.08)">
+    <div style="display:flex;gap:44px;width:max-content;animation:marq 64s linear infinite;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);white-space:nowrap">
+      <span>Content strategy</span><span>·</span><span>Reels</span><span>·</span><span>Media buying</span><span>·</span><span>Creative direction</span><span>·</span><span>E-commerce</span><span>·</span>
+      <span>Content strategy</span><span>·</span><span>Reels</span><span>·</span><span>Media buying</span><span>·</span><span>Creative direction</span><span>·</span><span>E-commerce</span><span>·</span>
+    </div>
+  </div>
+
+  
+
+  <section id="about" data-screen-label="About" style="scroll-margin-top:72px;text-align:center;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
+    <div>
+      <p style="margin:0 0 28px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#F0CE93">about</p>
+      <h2 style="margin:0;font-size:clamp(30px,3.4vw,48px);line-height:1.15;font-weight:600;letter-spacing:-0.02em;text-wrap:pretty">Since 2018, I've been building and growing brands.</h2>
+      <p style="margin:28px 0 0;font-size:17px;line-height:1.75;font-weight:300;color:rgba(255,255,255,0.8);max-width:46ch;margin-inline:auto;text-wrap:pretty">Business, art and expression. I take a brand from idea to execution, clear, intentional, and good-looking.</p>
+    </div>
+    <div>
+      <p style="margin:0 0 22px;font-size:15px;font-weight:600">I can support you with:</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;align-items:center;gap:14px">
+        <li style="display:flex;gap:14px;font-size:16px;font-weight:300;line-height:1.55;color:rgba(255,255,255,0.86);padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="color:#F0CE93">01</span>Designing visuals that reflect your brand identity</li>
+        <li style="display:flex;gap:14px;font-size:16px;font-weight:300;line-height:1.55;color:rgba(255,255,255,0.86);padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="color:#F0CE93">02</span>Building content strategies that drive engagement and growth</li>
+        <li style="display:flex;gap:14px;font-size:16px;font-weight:300;line-height:1.55;color:rgba(255,255,255,0.86);padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="color:#F0CE93">03</span>Creating reels that capture attention and tell your story</li>
+        <li style="display:flex;gap:14px;font-size:16px;font-weight:300;line-height:1.55;color:rgba(255,255,255,0.86)"><span style="color:#F0CE93">04</span>Scaling your e-comm business through paid ads on Meta</li>
+      </ul>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:34px">
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:300">Content planning &amp; strategy</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:300">Creative direction &amp; concepts</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:300">Graphic design (digital, print &amp; apparel)</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:300">Reels (shooting &amp; editing)</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:300">Performance marketing (media buying)</span>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="work" data-screen-label="Highlights" style="scroll-margin-top:72px;text-align:center;background: #F6F1E9; color: #2A1531; padding: clamp(64px,9vw,110px) clamp(20px,5vw,64px) clamp(72px,10vw,130px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding-bottom:clamp(24px,4vw,40px);border-bottom:1px solid rgba(42,21,49,0.18)">
+      <h2 style="margin:0;font-size:clamp(44px,12vw,132px);line-height:0.92;font-weight:700;letter-spacing:-0.04em">highlights</h2>
+      <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(42,21,49,0.6)">SELECTED CLIENTS, 2018–2026</p>
+    </div>
+
+    <article style="padding-top:72px">
+      
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        
+        <h3 style="margin:0;font-size:clamp(26px,5vw,52px);font-weight:600;letter-spacing:-0.02em">ElNaggari</h3><a href="https://www.instagram.com/elnaggarieg" target="_blank" rel="noreferrer" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#4B2359;border-bottom:1px solid rgba(75,35,89,0.4);padding-bottom:2px">@elnaggarieg ↗</a>
+      </div><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-self:center;margin-top:clamp(18px,3vw,26px)">
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Project Management</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Product Development</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Packaging Direction</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Creative Direction</span>
+        </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,4vw,48px);margin-top:clamp(24px,4vw,34px);align-items:start">
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; font-weight: 300; color: rgba(42,21,49,0.82); text-wrap: pretty; max-width: 611px; width: 100%; margin-inline: auto">Egyptian food brand. I ran the project: product ideas, packaging and creative direction.</p>
+        
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:clamp(28px,5vw,44px);max-width:1000px">
+        <sc-for list="{{ enTiles }}" as="t">
+          <div style="position:relative;overflow:hidden;border-radius:10px;background:repeating-linear-gradient(135deg,#EFE8DD 0 10px,#F6F1E9 10px 20px);aspect-ratio:1;display:flex;align-items:center;justify-content:center">
+            <div role="img" aria-label="ElNaggari post" style="width:100%;height:100%;background-image:url({{ t.src }});background-size:cover;background-position:center;transition:transform 600ms cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)"></div>
+          </div>
+        </sc-for>
+      </div>
+
+      </article>
+
+    <article style="margin-top:96px;padding-top:56px;border-top:1px solid rgba(42,21,49,0.18)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <h3 style="margin:0;font-size:clamp(26px,5vw,52px);font-weight:600;letter-spacing:-0.02em">Alexandria House of English</h3><a href="https://www.instagram.com/alexandria_house_of_english_" target="_blank" rel="noreferrer" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#4B2359;border-bottom:1px solid rgba(75,35,89,0.4);padding-bottom:2px">@alexandria_house_of_english_ ↗</a>
+        
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-self: end; justify-content: flex-start; flex-direction: row">
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Video Production</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Shooting &amp; Editing</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Content Strategy</span>
+        </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,4vw,48px);margin-top:clamp(24px,4vw,34px);align-items:start">
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; font-weight: 300; color: rgba(42,21,49,0.82); text-wrap: pretty; max-width: 584px; width: 100%; margin-inline: auto"><b>Leading content for the school since June 2024</b>, concept, shoot, edit and caption. The story told through the people in it, with one reel reaching over 800K views. Entirely organic, with no ad spend behind any of it.</p>
+        
+      </div>
+
+      
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(42,21,49,0.16);border:1px solid rgba(42,21,49,0.16);border-radius:14px;overflow:hidden;margin-top:40px">
+        <div style="background:#F6F1E9;padding:24px 22px">
+          <p style="margin:0;font-size:clamp(28px,3.2vw,42px);font-weight:600;letter-spacing:-0.02em">800K+</p>
+          <p style="margin:4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(42,21,49,0.6)">views · top reel</p>
+        </div>
+        
+        <div style="background:#F6F1E9;padding:24px 22px">
+          <p style="margin:0;font-size:clamp(28px,3.2vw,42px);font-weight:600;letter-spacing:-0.02em">3M+</p>
+          <p style="margin:4px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(42,21,49,0.6)">total views · organic</p>
+        </div>
+        
+      </div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:22px">
+        <sc-for list="{{ ahoeReels }}" as="r" hint-placeholder-count="9">
+          <a href="{{ r.url }}" target="_blank" rel="noreferrer" style="display:block;position:relative;border-radius:14px;overflow:hidden;background:#1B1B1F;aspect-ratio:0.5625;box-shadow:0 18px 40px rgba(42,21,49,0.14)" style-hover="transform:translateY(-4px)">
+            <div role="img" aria-label="{{ r.title }}" style="width:100%;height:100%;background-image:url({{ r.cover }});background-size:cover;background-position:center;opacity:0.94;"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,6,16,0.88) 0%, rgba(12,6,16,0.15) 42%, rgba(12,6,16,0.1) 100%)"></div>
+            <div style="position:absolute;left:12px;right:12px;bottom:12px;color:#fff">
+              <p style="margin:0;font-size:clamp(12.5px,3.4vw,15px);font-weight:600;line-height:1.3;text-wrap:pretty">{{ r.title }}</p>
+              <p style="margin:6px 0 0;font-family:'JetBrains Mono',monospace;font-size:clamp(9px,2.6vw,11px);letter-spacing:0.1em;text-transform:uppercase;color:#F0CE93">{{ r.stat }}</p>
+            </div>
+          </a>
+        </sc-for>
+        
+      </div>
+    </article>
+
+    <article style="margin-top:96px;padding-top:56px;border-top:1px solid rgba(42,21,49,0.18)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <h3 style="margin:0;font-size:clamp(26px,5vw,52px);font-weight:600;letter-spacing:-0.02em">Zou Designs</h3>
+        <a href="https://www.instagram.com/zoudesigns" target="_blank" rel="noreferrer" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#4B2359;border-bottom:1px solid rgba(75,35,89,0.4);padding-bottom:2px">@zoudesigns ↗</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-self:center;margin-top:clamp(18px,3vw,26px)">
+          
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Video Production</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Editing</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Creative Direction</span>
+        </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,4vw,48px);margin-top:clamp(24px,4vw,34px);align-items:start">
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; font-weight: 300; color: rgba(42,21,49,0.82); text-wrap: pretty; max-width: 572px; width: 100%; margin-inline: auto">Slow-fashion label in linen and neutrals. Styled and shot on location as a lookbook that works as a feed.</p>
+        
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:clamp(28px,5vw,44px);max-width:1000px">
+        <sc-for list="{{ zouTiles }}" as="t">
+          <div style="position:relative;overflow:hidden;border-radius:10px;background:repeating-linear-gradient(135deg,#EFE8DD 0 10px,#F6F1E9 10px 20px);aspect-ratio:0.775;display:flex;align-items:center;justify-content:center">
+            <div role="img" aria-label="Zou Designs post" style="width:100%;height:100%;background-image:url({{ t.src }});background-size:cover;background-position:center;transition:transform 600ms cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)"></div>
+          </div>
+        </sc-for>
+      </div>
+    </article>
+
+    <article style="margin-top:96px;padding-top:56px;border-top:1px solid rgba(42,21,49,0.18)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <h3 style="margin:0;font-size:clamp(26px,5vw,52px);font-weight:600;letter-spacing:-0.02em">Sue Catering</h3>
+        <a href="https://www.instagram.com/sue.bysomayaelgazzar/" target="_blank" rel="noreferrer" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#4B2359;border-bottom:1px solid rgba(75,35,89,0.4);padding-bottom:2px">@sue.bysomayaelgazzar ↗</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(24px,4vw,48px);margin-top:clamp(24px,4vw,34px);align-items:start">
+        <p style="margin:0;font-size:17px;line-height:1.7;font-weight:300;color:rgba(42,21,49,0.82);text-wrap:pretty">Bespoke event catering, filmed on the night. Reels that bring the table, the styling and the atmosphere together, reaching the right audience.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-self:center;margin-top:clamp(18px,3vw,26px)">
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Video production</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">On-site shooting</span>
+          <span style="padding:8px 14px;border-radius:999px;background:rgba(75,35,89,0.1);color:#4B2359;font-size:12.5px;font-weight:500">Editing</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:40px">
+        <sc-for list="{{ sueReels }}" as="r" hint-placeholder-count="4">
+          <a href="{{ r.url }}" target="_blank" rel="noreferrer" style="display:block;position:relative;border-radius:14px;overflow:hidden;background:#1B1B1F;aspect-ratio:0.5625;box-shadow:0 18px 40px rgba(42,21,49,0.14)" style-hover="transform:translateY(-4px)">
+            <div role="img" aria-label="Sue Catering reel" style="width:100%;height:100%;background-image:url({{ r.cover }});background-size:cover;background-position:center;opacity:0.94;"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,6,16,0.85) 0%, rgba(12,6,16,0.1) 45%)"></div>
+            
+          </a>
+        </sc-for>
+      </div>
+    </article>
+
+    <article style="text-align:center;margin:clamp(72px,10vw,110px) calc(-1 * clamp(20px,5vw,64px)) 0;padding:clamp(56px,8vw,88px) clamp(20px,5vw,64px) clamp(64px,9vw,96px);background:#241029;color:#F6F1E9">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:baseline">
+        <h3 style="margin:0;font-size:clamp(32px,7vw,80px);line-height:1;font-weight:700;letter-spacing:-0.035em">Real ad accounts.<br>Real numbers.<br><span style="color:#F0CE93">2026.</span></h3>
+        <p style="margin:0;font-size:16px;line-height:1.75;font-weight:300;color:rgba(246,241,233,0.7);max-width:42ch;margin-inline:auto;text-wrap:pretty">Live stores I currently buy media for, where the creative, the media plan and the spend all sit with me. Every figure below comes straight from the client dashboard.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:rgba(246,241,233,0.16);margin-top:64px">
+        <sc-for list="{{ adsCases }}" as="c" hint-placeholder-count="4">
+          <div style="background:#241029;padding:34px 34px 38px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+            <span style="align-self:center;padding:6px 14px;border-radius:999px;border:1px solid rgba(240,206,147,0.5);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0CE93">{{ c.tag }}</span>
+            <p style="margin:0;font-size:clamp(28px,3vw,42px);line-height:1.06;font-weight:700;letter-spacing:-0.03em;color:#F0CE93;text-wrap:pretty">{{ c.headline }}<span style="color:#F6F1E9">{{ c.headlineTail }}</span></p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:18px 24px">
+              <sc-for list="{{ c.metrics }}" as="m" hint-placeholder-count="4">
+                <div>
+                  <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(246,241,233,0.45)">{{ m.label }}</p>
+                  <p style="margin:6px 0 0;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500;color:#F6F1E9">{{ m.value }}</p>
+                </div>
+              </sc-for>
+            </div>
+            <p style="margin:0;font-size:14.5px;line-height:1.7;font-weight:300;color:rgba(246,241,233,0.7);text-wrap:pretty">{{ c.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:64px;padding-top:36px;border-top:1px solid rgba(246,241,233,0.2)">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+          <h4 style="margin:0;font-size:clamp(20px,2.2vw,30px);font-weight:600;letter-spacing:-0.02em">Best results, account by account</h4>
+          <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,241,233,0.5)">Swipe to see more &middot; 18 dashboards, 2026</p>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:26px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin-inline:calc(-1 * clamp(4px,2vw,20px));padding-inline:clamp(4px,2vw,20px);text-align:left">
+          <sc-for list="{{ adsLedger }}" as="row" hint-placeholder-count="18">
+            <div style="flex:0 0 auto;width:190px;scroll-snap-align:start;border:1px solid rgba(246,241,233,0.18);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px" style-hover="border-color:#F0CE93;background:rgba(246,241,233,0.04)">
+              <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,241,233,0.45)">{{ row.window }}</p>
+              <p style="margin:0;font-size:24px;font-weight:600;letter-spacing:-0.02em;line-height:1.1">{{ row.revenue }}</p>
+              <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:#F0CE93">{{ row.delta }}</p>
+              <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.06em;color:rgba(246,241,233,0.6)">{{ row.orders }} orders</p>
+              <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.06em;color:rgba(246,241,233,0.6)">{{ row.cvr }} conversion</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <p style="margin:26px 0 0;font-size:12.5px;font-weight:300;color:rgba(246,241,233,0.45)">Figures pulled from client store dashboards, shared with permission. Store names withheld.</p>
+    </article>
+
+    <div style="margin-top:110px;padding-top:44px;border-top:1px solid rgba(42,21,49,0.18)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <h3 style="margin:0;font-size:clamp(24px,2.6vw,36px);font-weight:600;letter-spacing:-0.02em">Brands that trusted the process</h3>
+        <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(42,21,49,0.6)">2018–2026</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:#2A1531;color:#F6F1E9;padding:22px 0;overflow:hidden;display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;gap:40px;width:max-content;animation:marq 80s linear infinite;white-space:nowrap;align-items:center">
+      <sc-for list="{{ clientMarquee }}" as="c" hint-placeholder-count="18">
+        <a href="{{ c.url }}" target="_blank" rel="noreferrer" style="font-size:clamp(22px,2.4vw,34px);font-weight:600;letter-spacing:-0.01em;color:#F6F1E9;opacity:0.85" style-hover="color:#F0CE93;opacity:1">{{ c.name }}</a>
+      </sc-for>
+    </div>
+  </div>
+<section id="services" data-screen-label="Services" style="scroll-margin-top:72px;text-align:center;padding:clamp(64px,9vw,120px) clamp(20px,5vw,64px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+      <h2 style="margin:0;font-size:clamp(30px,6vw,68px);line-height:1.04;font-weight:600;letter-spacing:-0.03em">Let&rsquo;s build something worth noticing</h2>
+      <p style="margin:0;max-width:42ch;margin-inline:auto;font-size:15px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.72)">Four things I do. Take one or take all of them, monthly or for a single project.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:clamp(36px,5vw,56px);text-align:left">
+      <div style="border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:clamp(24px,3vw,34px) clamp(20px,2.6vw,30px);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px" style-hover="border-color:#F0CE93;background:rgba(255,255,255,0.05)">
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#F0CE93">01</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Strategy &amp; direction</span>
+        </div>
+        <p style="margin:0;font-size:clamp(19px,2.2vw,23px);font-weight:600;letter-spacing:-0.01em;line-height:1.25">Content planning &amp; creative direction</p>
+        <p style="margin:0;font-size:14.5px;font-weight:300;line-height:1.65;color:rgba(255,255,255,0.72);text-wrap:pretty">What to post, when and why, with the concept and look owned end to end.</p>
+        <ul style="margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Monthly content plan</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Concepts &amp; art direction</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Captions &amp; copy</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Product &amp; packaging ideas</li>
+        </ul>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:clamp(24px,3vw,34px) clamp(20px,2.6vw,30px);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px" style-hover="border-color:#F0CE93;background:rgba(255,255,255,0.05)">
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#F0CE93">02</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Design</span>
+        </div>
+        <p style="margin:0;font-size:clamp(19px,2.2vw,23px);font-weight:600;letter-spacing:-0.01em;line-height:1.25">Graphic design</p>
+        <p style="margin:0;font-size:14.5px;font-weight:300;line-height:1.65;color:rgba(255,255,255,0.72);text-wrap:pretty">Everything your brand needs to look like itself, on screen and in hand.</p>
+        <ul style="margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Posts &amp; carousels</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Flyers &amp; posters</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Packaging</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Apparel &amp; merch</li>
+        </ul>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:clamp(24px,3vw,34px) clamp(20px,2.6vw,30px);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px" style-hover="border-color:#F0CE93;background:rgba(255,255,255,0.05)">
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#F0CE93">03</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Video</span>
+        </div>
+        <p style="margin:0;font-size:clamp(19px,2.2vw,23px);font-weight:600;letter-spacing:-0.01em;line-height:1.25">Reels, shot &amp; edited</p>
+        <p style="margin:0;font-size:14.5px;font-weight:300;line-height:1.65;color:rgba(255,255,255,0.72);text-wrap:pretty">I plan the shoot, film it and cut it. Built to be watched, not scrolled past.</p>
+        <ul style="margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Shoot planning</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Filming on location</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Editing &amp; captions</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Series &amp; formats</li>
+        </ul>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:clamp(24px,3vw,34px) clamp(20px,2.6vw,30px);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px" style-hover="border-color:#F0CE93;background:rgba(255,255,255,0.05)">
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#F0CE93">04</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Ads</span>
+        </div>
+        <p style="margin:0;font-size:clamp(19px,2.2vw,23px);font-weight:600;letter-spacing:-0.01em;line-height:1.25">Performance marketing</p>
+        <p style="margin:0;font-size:14.5px;font-weight:300;line-height:1.65;color:rgba(255,255,255,0.72);text-wrap:pretty">Meta media buying for online stores, creative and spend in the same hands.</p>
+        <ul style="margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Meta ads (FB &amp; IG)</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Creative testing</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Scaling &amp; budgets</li>
+          <li style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.88)">Monthly reporting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(40px,6vw,64px);padding:clamp(32px,5vw,52px) clamp(22px,4vw,44px);border-radius:22px;background:#F0CE93;color:#2E1338;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <h3 style="margin:0;font-size:clamp(24px,4vw,42px);line-height:1.1;font-weight:700;letter-spacing:-0.025em;max-width:24ch">No packages. Just tell me what you need.</h3>
+      <p style="margin:0;max-width:46ch;font-size:15.5px;font-weight:400;line-height:1.6;color:rgba(46,19,56,0.78)">Every quote is built around your brand, your goals and your budget. Send me a message and I will come back with a plan and a price within two days.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px">
+        <a href="https://wa.me/201098864439" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:999px;background:#2E1338;color:#F6F1E9;font-size:15px;font-weight:600" style-hover="background:#4B2359">Message me on WhatsApp <span>→</span></a>
+        <a href="mailto:ranimmsalem@gmail.com" style="display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:999px;border:1px solid rgba(46,19,56,0.35);color:#2E1338;font-size:15px;font-weight:500" style-hover="background:rgba(46,19,56,0.08)">Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="scroll-margin-top:72px;text-align:center;padding:clamp(64px,9vw,110px) clamp(20px,5vw,64px) clamp(48px,7vw,70px);border-top:1px solid rgba(255,255,255,0.16);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,60px);align-items:center">
+    <div>
+      <h2 style="margin:0;font-size:clamp(34px,8vw,92px);line-height:1;font-weight:700;letter-spacing:-0.035em">Got a brand<br>worth building?</h2>
+      <p style="margin:24px 0 0;font-size:17px;font-weight:300;color:rgba(255,255,255,0.78);max-width:44ch;margin-inline:auto">Tell me what you're launching and where you're stuck. You'll get a plan, not a pitch deck.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <a href="mailto:ranimmsalem@gmail.com" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-radius:14px;background:#F0CE93;color:#2E1338;font-size:17px;font-weight:600" style-hover="background:#fff">ranimmsalem@gmail.com <span>→</span></a>
+      <a href="https://wa.me/201098864439" target="_blank" rel="noreferrer" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-radius:14px;border:1px solid rgba(255,255,255,0.3);font-size:17px;font-weight:400" style-hover="background:rgba(255,255,255,0.08)">WhatsApp · 010 9886 4439 <span>→</span></a>
+      <a href="https://www.instagram.com/rsight.studio" target="_blank" rel="noreferrer" style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-radius:14px;border:1px solid rgba(255,255,255,0.3);font-size:17px;font-weight:400" style-hover="background:rgba(255,255,255,0.08)">@rsight.studio <span>→</span></a>
+    </div>
+  </section>
+
+  <footer style="padding:26px clamp(20px,5vw,64px) 40px;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5)">
+    <span>Ranim Salem, Creative &amp; brand</span>
+    <span>Alexandria, EG</span>
+  </footer>
+</div>
+  <template id="bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#4B2359"></rect><text x="50" y="62" font-family="Poppins, sans-serif" font-size="34" font-weight="700" fill="#F0CE93" text-anchor="middle">RS</text></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const enTiles = Array.from({ length: 9 }, (_, i) => ({ src: `assets/posts/en-0${i + 1}.jpg` }));
+    const zouPosts = Array.from({ length: 9 }, (_, i) => `assets/zou/zou-0${i + 1}.png`);
+    const zouTiles = Array.from({ length: 9 }, (_, i) => {
+      const src = zouPosts[i];
+      return src ? { src } : { empty: true, label: String(i + 1).padStart(2, "0") };
+    });
+    const clients = [
+      ["ElNaggari", "https://www.instagram.com/elnaggarieg"],
+      ["Alexandria House of English", "https://www.instagram.com/alexandria_house_of_english_"],
+      ["Zou Designs", "https://www.instagram.com/zoudesigns"],
+      ["Sue Catering", "https://www.instagram.com/sue.bysomayaelgazzar/"],
+      ["The Candle Co", "https://www.instagram.com/thecandleco._"],
+      ["Limelight Art School", "https://www.instagram.com/limelight.art.school"],
+      ["Tycoons SG", "https://www.instagram.com/tycoons.sg"],
+      ["Mureeh", "https://www.instagram.com/mureeh.egy"],
+      ["Khayyal", "#work"],
+      ["Dina Abbas Bridal", "https://www.instagram.com/dinaabbas_bridal"],
+      ["Fast & Fresh", "https://www.instagram.com/fastandfresheg/"]
+    ].map(([name, url]) => ({ name, url }));
+    return {
+      enTiles,
+      zouTiles,
+      clientMarquee: [...clients, ...clients],
+      adsCases: [
+        {
+          tag: "Best window",
+          headline: "E£8.4M",
+          headlineTail: " over two months",
+          metrics: [
+            { label: "revenue", value: "8.4M EGP" },
+            { label: "growth", value: "+58%" },
+            { label: "orders", value: "3,958" },
+            { label: "conversion rate", value: "1.9%" }
+          ],
+          body: "Two months of always-on buying with creative refreshed weekly, holding a steady daily floor alongside a single E£1M peak day."
+        },
+        {
+          tag: "Launch",
+          headline: "E£1M",
+          headlineTail: " in an 11-day window",
+          metrics: [
+            { label: "revenue", value: "1M EGP" },
+            { label: "growth", value: "+5.1K%" },
+            { label: "orders", value: "498" },
+            { label: "conversion rate", value: "2.2%" }
+          ],
+          body: "Cold launch of a new collection. Tested small, then scaled behind the two creatives that worked."
+        },
+        {
+          tag: "Best single day",
+          headline: "E£915K",
+          headlineTail: " in 24 hours",
+          metrics: [
+            { label: "revenue", value: "915,175 EGP" },
+            { label: "growth", value: "+887%" },
+            { label: "orders", value: "426" },
+            { label: "conversion rate", value: "5.1%" }
+          ],
+          body: "One offer, one day, the highest conversion rate the account has held."
+        },
+        {
+          tag: "Turnaround",
+          headline: "+809%",
+          headlineTail: " to E£1.1M",
+          metrics: [
+            { label: "revenue", value: "1.1M EGP" },
+            { label: "growth", value: "+809%" },
+            { label: "orders", value: "207" },
+            { label: "conversion rate", value: "1.7%" }
+          ],
+          body: "Inherited a stalled account. Rebuilt structure, audiences and angles, same product, same budget."
+        },
+        {
+          tag: "5-day sprint",
+          headline: "E£658K",
+          headlineTail: " in 5 days",
+          metrics: [
+            { label: "revenue", value: "658,387 EGP" },
+            { label: "growth", value: "+63.7K%" },
+            { label: "orders", value: "316" },
+            { label: "conversion rate", value: "2.9%" }
+          ],
+          body: "Five days of buying from a standing start. 316 orders, never below E£100K a day."
+        },
+        {
+          tag: "Highest conv. rate",
+          headline: "4.4%",
+          headlineTail: " on E£572K in a day",
+          metrics: [
+            { label: "revenue", value: "572,430 EGP" },
+            { label: "growth", value: "+1.3K%" },
+            { label: "orders", value: "94" },
+            { label: "conversion rate", value: "4.4%" }
+          ],
+          body: "Tight audience, one hero creative, everything else paused."
+        },
+        {
+          tag: "Steady growth",
+          headline: "E£201K",
+          headlineTail: " day, +67%",
+          metrics: [
+            { label: "revenue", value: "201,044 EGP" },
+            { label: "growth", value: "+67%" },
+            { label: "orders", value: "88" },
+            { label: "conversion rate", value: "1.3%" }
+          ],
+          body: "What the floor looks like once the account is stable, up two-thirds on the day before."
+        },
+        {
+          tag: "Cold restart",
+          headline: "+256%",
+          headlineTail: " to E£156K",
+          metrics: [
+            { label: "revenue", value: "156,760 EGP" },
+            { label: "growth", value: "+256%" },
+            { label: "orders", value: "34" },
+            { label: "conversion rate", value: "2.4%" }
+          ],
+          body: "A store that had stopped running ads. Restarted it with new creative and more than tripled its daily sales within the first week."
+        }
+      ],
+      adsLedger: [
+        { window: "Jul 1–Sep 5", revenue: "E£8.4M", delta: "+58%", orders: "3,958", cvr: "1.9%" },
+        { window: "30 days", revenue: "E£3.6M", delta: "+91%", orders: "1,773", cvr: "1.8%" },
+        { window: "Jun 16–24", revenue: "E£1.1M", delta: "+809%", orders: "207", cvr: "1.7%" },
+        { window: "Jun 29–Jul 9", revenue: "E£1M", delta: "+5.1K%", orders: "498", cvr: "2.2%" },
+        { window: "Single day", revenue: "E£915,175", delta: "+887%", orders: "426", cvr: "5.1%" },
+        { window: "Jul 1–5", revenue: "E£658,387", delta: "+63.7K%", orders: "316", cvr: "2.9%" },
+        { window: "Single day", revenue: "E£572,430", delta: "+1.3K%", orders: "94", cvr: "4.4%" },
+        { window: "Jun 17–24", revenue: "E£524,090", delta: "−21%", orders: "113", cvr: "1.1%" },
+        { window: "Jun 26–Jul 8", revenue: "E£493,278", delta: "−59%", orders: "116", cvr: "1.3%" },
+        { window: "Jun 3–9", revenue: "E£220,362", delta: "−3%", orders: "62", cvr: "1.1%" },
+        { window: "Jul 1–8", revenue: "E£210,532", delta: "−10%", orders: "92", cvr: "1.1%" },
+        { window: "Jun 3–9", revenue: "E£202,454", delta: "+5%", orders: "96", cvr: "1.2%" },
+        { window: "Single day", revenue: "E£201,044", delta: "+67%", orders: "88", cvr: "1.3%" },
+        { window: "Single day", revenue: "E£156,760", delta: "+256%", orders: "34", cvr: "2.4%" },
+        { window: "Jun 6", revenue: "E£132,010", delta: "+70%", orders: "81", cvr: "2.7%" },
+        { window: "Jun 26–Jul 6", revenue: "$1,833", delta: "+364%", orders: "26", cvr: "2.1%" },
+        { window: "Jun 5", revenue: "E£77,775", delta: "+64.7K%", orders: "44", cvr: "2.0%" },
+        { window: "Single day", revenue: "$943.20", delta: "+29%", orders: "11", cvr: "2.9%" },
+        { window: "Jun 3–9", revenue: "$605.55", delta: "+8%", orders: "8", cvr: "0.64%" }
+      ],
+      sueReels: [
+        { cover: "assets/reels/sue-3.png", url: "https://www.instagram.com/reel/DL9fX6wtjzA/" },
+        { cover: "assets/reels/sue-2.png", url: "https://www.instagram.com/reel/DMSn1aUtRDz/" },
+        { cover: "assets/reels/sue-4.png", url: "https://www.instagram.com/reel/DKSG4lgsXZe/" },
+        { cover: "assets/reels/sue-1.png", url: "https://www.instagram.com/reel/DNdW_vyTsZy/" }
+      ],
+      ahoeReels: [
+        { cover: "assets/reels/ahoe-1.png", url: "https://www.instagram.com/reel/DIZybRhMwd1/", title: "Lam Shamseya at our school, the power of presence", stat: "800K+ views · 20K likes · 3.9K shares" },
+        { cover: "assets/reels/ahoe-4.png", url: "https://www.instagram.com/reel/DAfvA3hsbp2/", title: "Graduation day, the walk they earned", stat: "102.5K views · 63.8K reached · 328 follows" },
+        { cover: "assets/reels/ahoe-3.png", url: "https://www.instagram.com/reel/DAfvA3hsbp2/", title: "IGCSE Class of 2024, one last walk through the halls", stat: "60.9K views" },
+        { cover: "assets/reels/ahoe-2.png", url: "https://www.instagram.com/reel/DAxtG_9MtQz/", title: "Honoring Egypt's courage and unity on the 6th of October", stat: "52.9K views · 276 shares" },
+        { cover: "assets/reels/ahoe-5.png", url: "https://www.instagram.com/reel/DX4rMqOtO2v/", title: "F2 graduation, we're ready for our special day", stat: "30.5K views · 16.8K reached · 48 follows" },
+        { cover: "assets/reels/ahoe-7.png", url: "https://www.instagram.com/reel/DPW5IsvDLP4/", title: "Graduation, Class of 2025", stat: "26.6K views · 14.4K reached" },
+        { cover: "assets/reels/ahoe-6.png", url: "https://www.instagram.com/reel/DRxGwG-DE5j/", title: "Small school, big love", stat: "19.1K views · 10.9K reached" },
+        { cover: "assets/reels/ahoe-9.png", url: "https://www.instagram.com/reel/DRmrYDHjB2Z/", title: "In conversation with the founder", stat: "17K views · 8.6K reached · 387 likes" },
+        { cover: "assets/reels/ahoe-8.png", url: "https://www.instagram.com/reel/DQmndx4DFTG/", title: "Halloween, life with them", stat: "14K views · 7K reached · 239 likes" }
+      ],
+      _unusedContentClients: [
+        { name: "capncarl13", note: "Content production" },
+        { name: "stefaniederoo", note: "Content & creatives" },
+        { name: "Bassam Khdair", note: "Brand content" },
+        { name: "CandleCo", note: "Product content" },
+        { name: "tycoons.sg", note: "Content production" }
+      ],
+      videoClients: [
+        { name: "Limelight Art School", note: "Reels" },
+        { name: "Sue Catering", note: "Food reels" },
+        { name: "Black Chiffon", note: "Fashion reels" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
